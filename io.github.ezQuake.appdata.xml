@@ -51,6 +51,17 @@
   </screenshots>
 
   <releases>
+    <release version="3.2.0" date="2020-03-19">
+      <description>
+        <p>
+          Most development effort in the past few years has centred on the renderer update (3.5) so 3.2's changes are relatively small and mainly focused on bugfixes &amp; demo playback.
+          <ul>
+            <li>Bugfixes</li>
+            <li>Demo playback</li>
+          </ul>
+        </p>
+      </description>
+    </release>
     <release version="3.1.0" date="2019-09-24">
       <description>
         <p>First release of ezQuake on Flatpak.</p>
