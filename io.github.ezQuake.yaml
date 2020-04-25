@@ -33,7 +33,8 @@ modules:
   buildsystem: simple
   build-commands:
   - make
-  - install -Dm 744 ezquake-linux-x86_64 /app/bin/ezquake-linux-x86_64
+  #  Name change to easily support ARM and Aarch64
+  - install -Dm 744 ezquake-linux-${FLATPAK_ARCH} /app/bin/ezquake-linux
   sources:
   - type: archive
     url: https://github.com/ezQuake/ezquake-source/archive/3.2.tar.gz
@@ -81,8 +82,8 @@ modules:
     - mkdir -p ~/.ezquake/rogue
     # validate game  data
     - ls ~/.ezquake/id1/pak0.pak || zenity --error --text "Game data pak0.pak and pak1.pak must be added to:\n~/.var/app/io.github.ezQuake/.ezquake/id1/" --ok-label "Close" --width=400
-    # Start Quake. Get fragging    
-    - /app/bin/ezquake-linux-x86_64 "$@"
+    # Start Quake. Get fragging.
+    - /app/bin/ezquake-linux "$@"
   - type: file
     path: io.github.ezQuake.desktop
   - type: file
