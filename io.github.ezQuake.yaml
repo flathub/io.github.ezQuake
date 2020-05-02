@@ -71,15 +71,21 @@ modules:
     dest-filename: ezquake.sh
     commands:
     # Place a user-copy of all config files in the users's config directory
-    - cp -npR  /app/share/ezquake ~/.ezquake/
-    - cp -npR  /app/share/id1 ~/.ezquake/
-    - cp -npR  /app/share/qw ~/.ezquake/ 
+    - cp -R  /app/share/ezquake ~/.ezquake/
+    - cp -R  /app/share/id1 ~/.ezquake/
+    - cp -R  /app/share/qw ~/.ezquake/ 
     # Create placeholders for expansions
     - mkdir -p ~/.ezquake/fortress
     - mkdir -p ~/.ezquake/hipnotic
     - mkdir -p ~/.ezquake/rogue
     # validate game  data
     - ls ~/.ezquake/id1/pak0.pak || zenity --error --text "Game data pak0.pak and pak1.pak must be added to:\n~/.var/app/io.github.ezQuake/.ezquake/id1/" --ok-label "Close" --width=400
+    # Migrate config so that homedir-saves keep working
+    - if [ -f ~/.ezquake/config.cfg ]; then
+    -   mkdir -p ~/.ezquake/ezquake/configs/
+    -   mv ~/.ezquake/config.cfg ~/.ezquake/ezquake/configs/config.cfg
+    -   sed -i 's|\(cfg_use_home\s*\)\("1"\)|\1"0"|g' ~/.ezquake/ezquake/configs/config.cfg
+    - fi
     # Start Quake. Get fragging.
     - /app/bin/ezquake-linux "$@" -basedir ~/.var/app/io.github.ezQuake/.ezquake
   - type: file
