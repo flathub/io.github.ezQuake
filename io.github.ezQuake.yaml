@@ -39,8 +39,6 @@ modules:
   - type: archive
     url: https://github.com/ezQuake/ezquake-source/archive/3.2.tar.gz
     sha256: 801151d540706106cbd26da7266aa5e330842b8cccbc5acd4bc8d5a73db3515d
-  - type: patch
-    path: directory.patch
 
 # We must do something really fishy. ezQuake has no support for mutiple users
 # or anything in that direction. Just download the binary and copy paste it next
@@ -83,7 +81,7 @@ modules:
     # validate game  data
     - ls ~/.ezquake/id1/pak0.pak || zenity --error --text "Game data pak0.pak and pak1.pak must be added to:\n~/.var/app/io.github.ezQuake/.ezquake/id1/" --ok-label "Close" --width=400
     # Start Quake. Get fragging.
-    - /app/bin/ezquake-linux "$@"
+    - /app/bin/ezquake-linux "$@" -basedir ~/.var/app/io.github.ezQuake/.ezquake
   - type: file
     path: io.github.ezQuake.desktop
   - type: file
