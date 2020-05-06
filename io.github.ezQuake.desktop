@@ -5,6 +5,7 @@ Exec=ezquake.sh
 Icon=io.github.ezQuake
 Name=ezQuake
 StartupNotify=true
+PrefersNonDefaultGPU=true
 Terminal=false
 Type=Application
 Keywords=quake;first;person;shooter;multiplayer;
