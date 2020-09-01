@@ -1,7 +1,7 @@
 app-id: io.github.ezQuake
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: "19.08"
+runtime-version: "20.08"
 command: ezquake.sh
 
 finish-args:
