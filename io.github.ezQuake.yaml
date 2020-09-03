@@ -32,6 +32,8 @@ modules:
 - name: ezquake-source
   buildsystem: simple
   build-commands:
+  # Addresse upstream, part of 3.2.2
+  # https://github.com/ezQuake/ezquake-source/issues/386
   - make LDFLAGS='-Wl,--allow-multiple-definition'
   #  Name change to easily support ARM and Aarch64
   - install -Dm 744 ezquake-linux-${FLATPAK_ARCH} /app/bin/ezquake-linux
