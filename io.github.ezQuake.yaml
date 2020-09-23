@@ -32,15 +32,13 @@ modules:
 - name: ezquake-source
   buildsystem: simple
   build-commands:
-  # Addresse upstream, part of 3.2.2
-  # https://github.com/ezQuake/ezquake-source/issues/386
-  - make LDFLAGS='-Wl,--allow-multiple-definition'
+  - make
   #  Name change to easily support ARM and Aarch64
   - install -Dm 744 ezquake-linux-${FLATPAK_ARCH} /app/bin/ezquake-linux
   sources:
   - type: archive
-    url: https://github.com/ezQuake/ezquake-source/archive/3.2.1.tar.gz
-    sha256: c8fa9efcc076bb0f720d156727846965ba8787afe7b284a85d7d0bc95feb60fc
+    url: https://github.com/ezQuake/ezquake-source/archive/3.2.2.tar.gz
+    sha256: 2ca2c455bcdd4cd7c3ac95fa87a8a4e3463aa86a5dbe0fd18576f8d9790425fa
 
 # We must do something really fishy. ezQuake has no support for mutiple users
 # or anything in that direction. Just download the binary and copy paste it next
@@ -63,8 +61,8 @@ modules:
   sources:
   - type: archive
     strip-components: 0
-    url: https://github.com/ezQuake/ezquake-source/releases/download/3.2.1/ezquake-ubuntu-3.2.1-full.tar.gz
-    sha256: f4fe25cc55098bb6337d0c80f26dcf4cd2b5167bb7a0762f69d02cdc34e3bfcc
+    url: https://github.com/ezQuake/ezquake-source/releases/download/3.2.2/ezquake-ubuntu-3.2.2-full.tar.gz
+    sha256: ef594c51b210fb0e534fbd1c46b63a011f473a8f942cda7802289568dd41fefe
 
 - name: launcher
   buildsystem: simple

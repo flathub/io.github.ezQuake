@@ -51,6 +51,24 @@
   </screenshots>
 
   <releases>
+    <release version="3.2.2" date="2020-09-23">
+      <description>
+        <p>Upstream updates:
+          <ul>
+            <li>Bugfixes</li>
+          </ul>
+        </p>
+      </description>
+    </release>
+    <release version="3.2.1" date="2020-06-24">
+      <description>
+        <p>Upstream updates:
+          <ul>
+            <li>Bugfixes</li>
+          </ul>
+        </p>
+      </description>
+    </release>
     <release version="3.2.0" date="2020-03-19">
       <description>
         <p>
