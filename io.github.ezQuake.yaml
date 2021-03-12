@@ -30,11 +30,10 @@ modules:
     sha256: f4f377da17b10201a60c1108613e78ee15df6b12016b116b6de42209f47a474f
 
 - name: ezquake-source
-  buildsystem: simple
-  build-commands:
-  - make
-  #  Name change to easily support ARM and Aarch64
-  - install -Dm 744 ezquake-linux-${FLATPAK_ARCH} /app/bin/ezquake-linux
+  buildsystem: meson
+  post-install:
+    #  Name change to easily support ARM and Aarch64
+    - install -Dm 744 ezquake-linux-${FLATPAK_ARCH} /app/bin/ezquake-linux
   sources:
   - type: archive
     url: https://github.com/ezQuake/ezquake-source/archive/3.2.3.tar.gz
