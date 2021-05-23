@@ -18,6 +18,8 @@ cleanup:
 - /include
 - /lib/*.a
 - /lib/*.la
+- /lib/cmake
+- /lib/debug
 - /lib/pkgconfig
 
 modules:
