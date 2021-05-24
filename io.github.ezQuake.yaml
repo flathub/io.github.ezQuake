@@ -15,10 +15,12 @@ finish-args:
 - --persist=.ezquake
 
 cleanup:
-- /app/include
-- /app/lib/*.a
-- /app/lib/*.la
-- /app/lib/pkgconfig
+- /include
+- /lib/*.a
+- /lib/*.la
+- /lib/cmake
+- /lib/debug
+- /lib/pkgconfig
 
 modules:
 
