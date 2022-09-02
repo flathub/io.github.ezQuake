@@ -28,8 +28,12 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://digip.org/jansson/releases/jansson-2.13.1.tar.gz
-        sha256: f4f377da17b10201a60c1108613e78ee15df6b12016b116b6de42209f47a474f
+        url: https://github.com/akheron/jansson/archive/v2.14.tar.gz
+        sha256: f22901582138e3203959c9257cf83eba9929ac41d7be4a42557213a22ebcc7a0
+        x-checker-data:
+          type: anitya
+          project-id: 1417
+          url-template: https://github.com/akheron/jansson/archive/v$version.tar.gz
 
   - name: ezquake-source
     buildsystem: simple
@@ -38,9 +42,13 @@ modules:
       #  Name change to easily support ARM and Aarch64
       - install -Dm 744 ezquake-linux-${FLATPAK_ARCH} /app/bin/ezquake-linux
     sources:
-      - type: archive
-        url: https://github.com/ezQuake/ezquake-source/archive/3.2.3.tar.gz
-        sha256: ec5187b47ad859cf459381296e8d1d560041fd90462dbe0ab89c65e320677ed4
+      - type: git
+        url: https://github.com/ezQuake/ezquake-source
+        tag: 3.2.3        
+        sha256: e7ecc1f1969504751d4252d58a27c9e015796ec9
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d.]+)$
 
   # We must do something really fishy. ezQuake has no support for mutiple users
   # or anything in that direction. Just download the binary and copy paste it next
