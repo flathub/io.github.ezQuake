@@ -44,7 +44,7 @@ modules:
       - type: git
         url: https://github.com/ezQuake/ezquake-source
         tag: 3.2.3
-        sha256: e7ecc1f1969504751d4252d58a27c9e015796ec9
+        commit: e7ecc1f1969504751d4252d58a27c9e015796ec9
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
@@ -58,7 +58,6 @@ modules:
 
   # More modern games do exactly this, but they have it as part of the application. Here
   # We add it as a part of the packaging. It was this, or writing a lot of upstream C code.
-        commit: e7ecc1f1969504751d4252d58a27c9e015796ec9
   - name: ezquake-data
     buildsystem: simple
     build-commands:
