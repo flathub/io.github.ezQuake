@@ -1,7 +1,7 @@
 app-id: io.github.ezQuake
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: "22.08"
+runtime-version: '22.08'
 command: ezquake.sh
 
 finish-args:
@@ -43,8 +43,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ezQuake/ezquake-source
-        tag: 3.2.3        
-        sha256: e7ecc1f1969504751d4252d58a27c9e015796ec9
+        tag: 3.2.3
+        commit: e7ecc1f1969504751d4252d58a27c9e015796ec9
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
@@ -88,7 +88,9 @@ modules:
           - mkdir -p ~/.ezquake/hipnotic
           - mkdir -p ~/.ezquake/rogue
           # validate game  data
-          - ls ~/.ezquake/id1/pak0.pak || zenity --error --text "Game data pak0.pak and pak1.pak must be added to:\n~/.var/app/io.github.ezQuake/.ezquake/id1/" --ok-label "Close" --width=400
+          - ls ~/.ezquake/id1/pak0.pak || zenity --error --text "Game data pak0.pak
+            and pak1.pak must be added to:\n~/.var/app/io.github.ezQuake/.ezquake/id1/"
+            --ok-label "Close" --width=400
           # Migrate config so that homedir-saves keep working
           - if [ -f ~/.ezquake/config.cfg ]; then
           - mkdir -p ~/.ezquake/ezquake/configs/
