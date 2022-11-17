@@ -18,7 +18,6 @@ cleanup:
   - /lib/*.a
   - /lib/*.la
   - /lib/cmake
-  - /lib/debug
   - /lib/pkgconfig
 
 modules:
@@ -43,8 +42,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ezQuake/ezquake-source
-        tag: 3.2.3
-        commit: e7ecc1f1969504751d4252d58a27c9e015796ec9
+        tag: 3.6.1
+        commit: 06270807a03fec68bb5adb6f5a72a4d352a787eb
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
