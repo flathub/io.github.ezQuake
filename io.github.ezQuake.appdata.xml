@@ -37,20 +37,29 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://ezquake.github.io/screenshots/armor_battle.png</image>
+      <image>https://ezquake.com/assets/img/screenshots/armor_battle.jpg</image>
       <caption>Battle for armor</caption>
     </screenshot>
     <screenshot>
-      <image>https://ezquake.github.io/screenshots/bloom.jpg</image>
+      <image>https://ezquake.com/assets/img/screenshots/bloom.jpg</image>
       <caption>Bloom effect</caption>
     </screenshot>
     <screenshot>
-      <image>https://ezquake.github.io/screenshots/shambler_cutf_bluefog.jpg</image>
+      <image>https://ezquake.com/assets/img/screenshots/shambler_cutf_bluefog.jpg</image>
       <caption>Special effects</caption>
     </screenshot>
   </screenshots>
 
   <releases>
+    <release version="3.6.1" date="2022-11-05">
+      <description>
+        <p>Upstream updates:
+          <ul>
+            <li>Bugfixes</li>
+          </ul>
+        </p>
+      </description>
+    </release>
     <release version="3.2.3" date="2021-02-10">
       <description>
         <p>Upstream updates:
