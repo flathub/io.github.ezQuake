@@ -33,6 +33,22 @@ modules:
           project-id: 1417
           url-template: https://github.com/akheron/jansson/archive/v$version.tar.gz
 
+  - name: minizip
+    subdir: contrib/minizip
+    sources:
+      - type: archive
+        url: https://zlib.net/zlib-1.3.tar.gz
+        sha256: ff0ba4c292013dbc27530b3a81e1f9a813cd39de01ca5e0f8bf355702efa593e
+        x-checker-data:
+          type: anitya
+          project-id: 5303
+          url-template: https://zlib.net/zlib-$version.tar.gz
+      - type: script
+        dest: contrib/minizip/
+        dest-filename: autogen.sh
+        commands:
+          - autoreconf -ifv
+          
   - name: ezquake-source
     buildsystem: simple
     build-commands:
@@ -42,8 +58,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ezQuake/ezquake-source
-        tag: 3.6.3
-        commit: b1e4a27e1bac0a253b2311f7ed911ac8861df06e
+        tag: 3.6.4
+        commit: 3925ba3d48cd4a03dfdaa3d29e4d79dc3b2c90b2
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
