@@ -51,7 +51,27 @@
   </screenshots>
 
   <releases>
+    <release version="3.6.4" date="2023-10-29">
+      <description>
+        <p>Updated release package to ezQuake 3.6.4</p>
+      </description>
+    </release>
+    <release version="3.6.3" date="2023-08-10">
+      <description>
+        <p>Updated release package to ezQuake 3.6.3</p>
+      </description>
+    </release>
+    <release version="3.6.2" date="2023-03-19">
+      <description>
+        <p>Updated release package to ezQuake 3.6.2</p>
+      </description>
+    </release>
     <release version="3.6.1" date="2022-11-05">
+      <description>
+        <p>Updated release package to ezQuake 3.6.1</p>
+      </description>
+    </release>
+    <release version="3.6.0" date="2022-10-06">
       <description>
         <p>Upstream updates:
           <ul>
