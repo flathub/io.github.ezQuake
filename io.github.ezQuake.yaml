@@ -103,7 +103,7 @@ modules:
           - mkdir -p ~/.ezquake/hipnotic
           - mkdir -p ~/.ezquake/rogue
           # validate game  data
-          - ls ~/.ezquake/id1/pak0.pak || zenity --error --text "Game data pak0.pak
+          - ls ~/.ezquake/id1/pak0.pak || ls ~/.ezquake/id1/PAK0.PAK || zenity --error --text "Game data pak0.pak
             and pak1.pak must be added to:\n~/.var/app/io.github.ezQuake/.ezquake/id1/"
             --ok-label "Close" --width=400
           # Migrate config so that homedir-saves keep working
