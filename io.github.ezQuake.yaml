@@ -58,8 +58,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ezQuake/ezquake-source
-        tag: 3.6.4
-        commit: 3925ba3d48cd4a03dfdaa3d29e4d79dc3b2c90b2
+        tag: 3.6.5
+        commit: 5f643f12e01eb9da4d327b679aabdf12e80692b4
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
@@ -103,8 +103,8 @@ modules:
           - mkdir -p ~/.ezquake/hipnotic
           - mkdir -p ~/.ezquake/rogue
           # validate game  data
-          - ls ~/.ezquake/id1/pak0.pak || ls ~/.ezquake/id1/PAK0.PAK || zenity --error --text "Game data pak0.pak
-            and pak1.pak must be added to:\n~/.var/app/io.github.ezQuake/.ezquake/id1/"
+          - ls ~/.ezquake/id1/pak0.pak || ls ~/.ezquake/id1/PAK0.PAK || zenity --error
+            --text "Game data pak0.pak and pak1.pak must be added to:\n~/.var/app/io.github.ezQuake/.ezquake/id1/"
             --ok-label "Close" --width=400
           # Migrate config so that homedir-saves keep working
           - if [ -f ~/.ezquake/config.cfg ]; then
