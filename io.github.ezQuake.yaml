@@ -50,9 +50,9 @@ modules:
           - autoreconf -ifv
 
   - name: ezquake-source
-    buildsystem: simple
-    build-commands:
-      - make
+    buildsystem: cmake-ninja
+    no-make-install: true
+    post-install:
       #  Name change to easily support ARM and Aarch64
       - install -Dm 744 ezquake-linux-${FLATPAK_ARCH} /app/bin/ezquake-linux
     sources:
