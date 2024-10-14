@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2019 Kevin Degeling -->
-
 <component type="desktop">
   <id>io.github.ezQuake</id>
   <name>ezQuake</name>
   <summary>a modern QuakeWorld client focused on competitive online play</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0</project_license>
-
   <developer_name>ezQuake team</developer_name>
   <update_contact>gnome@kevindegeling.nl</update_contact>
-
   <url type="homepage">https://ezquake.github.io/</url>
   <url type="bugtracker">https://github.com/ezQuake/ezquake-source</url>
   <url type="help">https://ezquake.github.io/manual.html</url>
   <url type="contact">https://www.quakeworld.nu/forum</url>
-
   <launchable type="desktop-id">io.github.ezQuake.desktop</launchable>
-
   <description>
-    <p>
-      Welcome to the home of ezQuake, a modern QuakeWorld client focused on competitive online play. Combining the features of modern QuakeWorld® clients, ezQuake makes QuakeWorld® easier to start and play. The immortal first person shooter Quake® in a brand new skin with superb graphics and extremely fast gameplay.
-    </p>
+    <p>Welcome to the home of ezQuake, a modern QuakeWorld client focused on competitive online play. Combining the features of modern QuakeWorld® clients, ezQuake makes QuakeWorld® easier to start and play. The immortal first person shooter Quake® in a brand new skin with superb graphics and extremely fast gameplay.</p>
+    <p>Features:</p>
     <ul>
       <li>Modern Graphics: Particle explosions, shaft beam, gunshots, nails, rocket and grenade trails, blood, and others, MD3 models, fog, water effects, killing spree messages, rain</li>
       <li>Modern competitive gaming features: Fullbright skins, forcing team/enemy colors, advanced weapon handling, teamplay messages, auto game recording, automated screenshots and console logging</li>
@@ -30,11 +24,8 @@
       <li>Integrated Server Browser: Easy searching and filtering of online servers</li>
       <li>Enhanced demo/QTV playback: View recorded games from multiple points of view, watch action on radar, all player stats in a handy table, autotrack the strongest player</li>
     </ul>
-    <p>
-     Commercial data files are required to run the supported games. These can be aquired though a multitude of sources. See the manual for more info on this.
-    </p>
+    <p>Commercial data files are required to run the supported games. These can be aquired though a multitude of sources. See the manual for more info on this.</p>
   </description>
-
   <screenshots>
     <screenshot type="default">
       <image>https://ezquake.com/assets/img/screenshots/armor_battle.jpg</image>
@@ -49,8 +40,12 @@
       <caption>Special effects</caption>
     </screenshot>
   </screenshots>
-
   <releases>
+    <release version="3.6.5" date="2024-10-13">
+      <description>
+        <p>Updated release package to ezQuake 3.6.5</p>
+      </description>
+    </release>
     <release version="3.6.4" date="2023-10-29">
       <description>
         <p>Updated release package to ezQuake 3.6.4</p>
@@ -73,49 +68,27 @@
     </release>
     <release version="3.6.0" date="2022-10-06">
       <description>
-        <p>Upstream updates:
-          <ul>
-            <li>Bugfixes</li>
-          </ul>
-        </p>
+        <p>Upstream update</p>
       </description>
     </release>
     <release version="3.2.3" date="2021-02-10">
       <description>
-        <p>Upstream updates:
-          <ul>
-            <li>Bugfixes</li>
-          </ul>
-        </p>
+        <p>Upstream update</p>
       </description>
     </release>
     <release version="3.2.2" date="2020-09-23">
       <description>
-        <p>Upstream updates:
-          <ul>
-            <li>Bugfixes</li>
-          </ul>
-        </p>
+        <p>Upstream update</p>
       </description>
     </release>
     <release version="3.2.1" date="2020-06-24">
       <description>
-        <p>Upstream updates:
-          <ul>
-            <li>Bugfixes</li>
-          </ul>
-        </p>
+        <p>Upstream update</p>
       </description>
     </release>
     <release version="3.2.0" date="2020-03-19">
       <description>
-        <p>
-          Most development effort in the past few years has centred on the renderer update (3.5) so 3.2's changes are relatively small and mainly focused on bugfixes &amp; demo playback.
-          <ul>
-            <li>Bugfixes</li>
-            <li>Demo playback</li>
-          </ul>
-        </p>
+        <p>Upstream update</p>
       </description>
     </release>
     <release version="3.1.0" date="2019-09-24">
@@ -124,7 +97,6 @@
       </description>
     </release>
   </releases>
-
   <content_rating type="oars-1.1">
     <content_attribute id="violence-realistic">moderate</content_attribute>
     <content_attribute id="violence-bloodshed">moderate</content_attribute>
@@ -134,4 +106,3 @@
     <content_attribute id="social-audio">intense</content_attribute>
   </content_rating>
 </component>
-
