@@ -59,8 +59,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ezQuake/ezquake-source
-        tag: 3.6.5
-        commit: 5f643f12e01eb9da4d327b679aabdf12e80692b4
+        tag: 3.6.6
+        commit: f4e3259cdb9dfa55b734535e1ab1d5f025e78b9b
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
