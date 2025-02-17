@@ -55,7 +55,7 @@ modules:
       - cmake --preset dynamic
       - cmake --build build-dynamic --config Release
       # Name change to easily support ARM and Aarch64
-      - install -Dm 744 ezquake-linux-${FLATPAK_ARCH} /app/bin/ezquake-linux
+      - install -Dm 744 Release/ezquake-linux-${FLATPAK_ARCH} /app/bin/ezquake-linux
     sources:
       - type: git
         url: https://github.com/ezQuake/ezquake-source
