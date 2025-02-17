@@ -55,7 +55,12 @@ modules:
       - cmake --preset dynamic
       - cmake --build build-dynamic --config Release
       # Name change to easily support ARM and Aarch64
-      - install -Dm 744 Release/ezquake-linux-${FLATPAK_ARCH} /app/bin/ezquake-linux
+      - install -Dm 744 build-dynamic/Release/ezquake-linux-${FLATPAK_ARCH} /app/bin/ezquake-linux
+      # Add icons and such
+      - install -Dm 644 dist/linux/io.github.ezQuake.desktop -t /app/share/applications
+      - install -Dm 644 dist/linux/io.github.ezQuake.48.png /app/share/icons/hicolor/48x48/apps/io.github.ezQuake.png
+      - install -Dm 644 dist/linux/io.github.ezQuake.64.png /app/share/icons/hicolor/64x64/apps/io.github.ezQuake.png
+      - install -Dm 644 dist/linux/io.github.ezQuake.128.png /app/share/icons/hicolor/128x128/apps/io.github.ezQuake.png
     sources:
       - type: git
         url: https://github.com/ezQuake/ezquake-source
@@ -65,15 +70,6 @@ modules:
           type: git
           tag-pattern: ^([\d.]+)$
 
-  # We must do something really fishy. ezQuake has no support for mutiple users
-  # or anything in that direction. Just download the binary and copy paste it next
-  # to your existing Quake binary. As such, there is no difference between user resources
-  # and static app resources. To fix this in the context of a Flatpak, we create a series
-  # of static resources in the /app/share folder and we create a copy for the user to edit
-  # and change.
-
-  # More modern games do exactly this, but they have it as part of the application. Here
-  # We add it as a part of the packaging. It was this, or writing a lot of upstream C code.
   - name: ezquake-data
     buildsystem: simple
     build-commands:
@@ -83,12 +79,22 @@ modules:
       - mv qw /app/share/qw
       # cleanup to prevent confusion
       - rm /app/share/id1/'copy your pak0.pak and pak1.pak files here.txt'
+      # Add up-to-date metainfo
+      - install -Dm 644 io.github.ezQuake.appdata.xml -t /app/share/metainfo
     sources:
+      - type: file
+        path: io.github.ezQuake.appdata.xml
       - type: archive
         strip-components: 0
         url: https://github.com/ezQuake/ezquake-source/releases/download/3.2.3/ezquake-ubuntu-3.2.3-full.tar.gz
         sha256: d58f26ed912166615420f0d0b208a10fd2539a84b90e85edfcb1aedc94615af5
 
+  # We must do something really fishy. ezQuake has no support for mutiple users
+  # or anything in that direction. Just download the binary and copy paste it next
+  # to your existing Quake binary. As such, there is no difference between user resources
+  # and static app resources. To fix this in the context of a Flatpak, we create a series
+  # of static resources in the /app/share folder and we create a copy for the user to edit
+  # and change.
   - name: launcher
     buildsystem: simple
     sources:
@@ -115,21 +121,5 @@ modules:
           - fi
           # Start Quake. Get fragging.
           - /app/bin/ezquake-linux "$@" -basedir ~/.var/app/io.github.ezQuake/.ezquake
-      - type: file
-        path: io.github.ezQuake.desktop
-      - type: file
-        path: io.github.ezQuake.appdata.xml
-      - type: file
-        path: io.github.ezQuake.48.png
-      - type: file
-        path: io.github.ezQuake.64.png
-      - type: file
-        path: io.github.ezQuake.128.png
     build-commands:
       - install -Dm 744 ezquake.sh -t /app/bin
-      - install -Dm 644 io.github.ezQuake.desktop -t /app/share/applications
-      - install -Dm 644 io.github.ezQuake.appdata.xml -t /app/share/metainfo
-      - install -Dm 644 io.github.ezQuake.48.png /app/share/icons/hicolor/48x48/apps/io.github.ezQuake.png
-      - install -Dm 644 io.github.ezQuake.64.png /app/share/icons/hicolor/64x64/apps/io.github.ezQuake.png
-      - install -Dm 644 io.github.ezQuake.128.png /app/share/icons/hicolor/128x128/apps/io.github.ezQuake.png
-
