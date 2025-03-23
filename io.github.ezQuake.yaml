@@ -26,8 +26,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://github.com/akheron/jansson/archive/v2.14.tar.gz
-        sha256: c739578bf6b764aa0752db9a2fdadcfe921c78f1228c7ec0bb47fa804c55d17b
+        url: https://github.com/akheron/jansson/archive/v2.14.1.tar.gz
+        sha256: 979210eaffdffbcf54cfc34d047fccde13f21b529a381df26db871d886f729a4
         x-checker-data:
           type: anitya
           project-id: 1417
