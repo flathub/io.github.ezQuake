@@ -1,7 +1,7 @@
 app-id: io.github.ezQuake
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: '24.08'
+runtime-version: '25.08'
 command: ezquake.sh
 
 finish-args:
@@ -24,6 +24,8 @@ modules:
 
   - name: jansson
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
         url: https://github.com/akheron/jansson/archive/v2.14.1.tar.gz
