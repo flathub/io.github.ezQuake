@@ -39,8 +39,8 @@ modules:
     subdir: contrib/minizip
     sources:
       - type: archive
-        url: https://zlib.net/zlib-1.3.1.tar.gz
-        sha256: 9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23
+        url: https://zlib.net/zlib-1.3.2.tar.gz
+        sha256: bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16
         x-checker-data:
           type: anitya
           project-id: 5303
@@ -66,8 +66,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ezQuake/ezquake-source
-        tag: 3.6.8
-        commit: f87af73da7764e174f162226f32a94dc42d0783b
+        tag: 3.6.9
+        commit: b2d448f2c5ac4be4ec40c03dcc9a018c1f837deb
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
