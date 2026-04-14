@@ -28,8 +28,8 @@ modules:
       - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
-        url: https://github.com/akheron/jansson/archive/v2.14.1.tar.gz
-        sha256: 979210eaffdffbcf54cfc34d047fccde13f21b529a381df26db871d886f729a4
+        url: https://github.com/akheron/jansson/archive/v2.15.0.tar.gz
+        sha256: 73ac12bbc62ff536e40c7a3e15ed007993c5ca4d23897de23f1906f891b5a4bb
         x-checker-data:
           type: anitya
           project-id: 1417
@@ -39,12 +39,14 @@ modules:
     subdir: contrib/minizip
     sources:
       - type: archive
-        url: https://zlib.net/zlib-1.3.1.tar.gz
-        sha256: 9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23
-        x-checker-data:
-          type: anitya
-          project-id: 5303
-          url-template: https://zlib.net/zlib-$version.tar.gz
+        url: https://github.com/madler/zlib/archive/refs/tags/v1.3.1.tar.gz
+        sha256: 17e88863f3600672ab49182f217281b6fc4d3c762bde361935e436a95214d05c
+        # Disable to fix the following error
+        # fatal error: unzip.h: No such file or directory
+        # x-checker-data:
+        #   type: anitya
+        #   project-id: 5303
+        #   url-template: https://zlib.net/zlib-$version.tar.gz
       - type: script
         dest: contrib/minizip/
         dest-filename: autogen.sh
@@ -65,9 +67,9 @@ modules:
       - install -Dm 644 dist/linux/io.github.ezQuake.128.png /app/share/icons/hicolor/128x128/apps/io.github.ezQuake.png
     sources:
       - type: git
-        url: https://github.com/ezQuake/ezquake-source
-        tag: 3.6.8
-        commit: f87af73da7764e174f162226f32a94dc42d0783b
+        url: https://github.com/QW-Group/ezquake-source
+        tag: 3.6.9
+        commit: b2d448f2c5ac4be4ec40c03dcc9a018c1f837deb
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
@@ -88,7 +90,7 @@ modules:
         path: io.github.ezQuake.appdata.xml
       - type: archive
         strip-components: 0
-        url: https://github.com/ezQuake/ezquake-source/releases/download/3.2.3/ezquake-ubuntu-3.2.3-full.tar.gz
+        url: https://github.com/QW-Group/ezquake-source/releases/download/3.2.3/ezquake-ubuntu-3.2.3-full.tar.gz
         sha256: d58f26ed912166615420f0d0b208a10fd2539a84b90e85edfcb1aedc94615af5
 
   # We must do something really fishy. ezQuake has no support for mutiple users
