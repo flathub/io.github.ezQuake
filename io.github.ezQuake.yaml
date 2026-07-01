@@ -28,8 +28,8 @@ modules:
       - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
-        url: https://github.com/akheron/jansson/archive/v2.15.0.tar.gz
-        sha256: 73ac12bbc62ff536e40c7a3e15ed007993c5ca4d23897de23f1906f891b5a4bb
+        url: https://github.com/akheron/jansson/archive/v2.15.1.tar.gz
+        sha256: dbf95cb0af903f4fb8b61507d96b45b67db7d1479688ede352e1d571394d06f7
         x-checker-data:
           type: anitya
           project-id: 1417
