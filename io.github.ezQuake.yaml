@@ -15,10 +15,10 @@ finish-args:
 
 cleanup:
   - /include
-  - /lib/*.a
-  - /lib/*.la
   - /lib/cmake
   - /lib/pkgconfig
+  - '*.la'
+  - '*.a'
 
 modules:
 
@@ -28,8 +28,8 @@ modules:
       - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
-        url: https://github.com/akheron/jansson/archive/v2.15.0.tar.gz
-        sha256: 73ac12bbc62ff536e40c7a3e15ed007993c5ca4d23897de23f1906f891b5a4bb
+        url: https://github.com/akheron/jansson/archive/v2.15.1.tar.gz
+        sha256: dbf95cb0af903f4fb8b61507d96b45b67db7d1479688ede352e1d571394d06f7
         x-checker-data:
           type: anitya
           project-id: 1417
@@ -53,7 +53,7 @@ modules:
         commands:
           - autoreconf -ifv
 
-  - name: ezquake-source
+  - name: ezQuake
     buildsystem: simple
     build-commands:
       - cmake --preset dynamic
@@ -62,8 +62,6 @@ modules:
       - install -Dm 744 build-dynamic/Release/ezquake-linux-${FLATPAK_ARCH} /app/bin/ezquake-linux
       # Add icons and such
       - install -Dm 644 dist/linux/io.github.ezQuake.desktop -t /app/share/applications
-      - install -Dm 644 dist/linux/io.github.ezQuake.48.png /app/share/icons/hicolor/48x48/apps/io.github.ezQuake.png
-      - install -Dm 644 dist/linux/io.github.ezQuake.64.png /app/share/icons/hicolor/64x64/apps/io.github.ezQuake.png
       - install -Dm 644 dist/linux/io.github.ezQuake.128.png /app/share/icons/hicolor/128x128/apps/io.github.ezQuake.png
     sources:
       - type: git
@@ -72,6 +70,7 @@ modules:
         commit: b2d448f2c5ac4be4ec40c03dcc9a018c1f837deb
         x-checker-data:
           type: git
+          is-main-source: true
           tag-pattern: ^([\d.]+)$
 
   - name: ezquake-data
@@ -101,6 +100,8 @@ modules:
   # and change.
   - name: launcher
     buildsystem: simple
+    build-commands:
+      - install -Dm 744 ezquake.sh -t /app/bin
     sources:
       - type: script
         dest-filename: ezquake.sh
@@ -125,5 +126,3 @@ modules:
           - fi
           # Start Quake. Get fragging.
           - /app/bin/ezquake-linux "$@" -basedir ~/.var/app/io.github.ezQuake/.ezquake
-    build-commands:
-      - install -Dm 744 ezquake.sh -t /app/bin
